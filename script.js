@@ -11,24 +11,15 @@ const SEND_ELEMENT = document.getElementById('send');
 const PATTERN_DURATION = 1;
 const PREAMBLE_DURATION = 2;
 
-const BITS_FREQS_DICT = {
-    '0000': 2500,
-    '0001': 2800,
-    '0010': 3100,
-    '0011': 3400,
-    '0100': 3700,
-    '0101': 4000,
-    '0110': 4300,
-    '0111': 4600,
-    '1000': 4900,
-    '1001': 5200,
-    '1010': 5500,
-    '1011': 5800, 
-    '1100': 6100,
-    '1101': 6400,
-    '1110': 6700,
-    '1111': 7000,
-};
+const BITS_FREQS_DICT = Object.fromEntries(
+    Array.from({length: 16}, (_, i) => {
+        const bits = i.toString(2).padStart(4, '0');
+        const freq = 500 + i * 300;
+        return [bits, freq];
+    })
+);
+
+console.log(BITS_FREQS_DICT);
 const PREAMBLE_FREQ = 1000;
 const SIZE_BITS = Object.keys(BITS_FREQS_DICT)[0].length;
 
