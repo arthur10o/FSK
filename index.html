@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title>FSK - technologie</title>
+</head>
+
+<body>
+    <div class="graph-panel">
+        <canvas id="spectrum" width="600" height="200"></canvas>
+        <canvas id="filtered" width="600" height="200"></canvas>
+    </div>
+    <div class="info-panel">
+
+        <div class="box" id="bits_box">
+            <div class="label">BITS</div>
+            <div class="value" id="bits"></div>
+        </div>
+
+        <div class="box" id="result_box">
+            <div class="label">RESULT</div>
+            <div class="value" id="result"></div>
+        </div>
+
+        <div class="box" id="debug_box">
+            <div class="label">DEBUG</div>
+            <div class="value" id="debug"></div>
+        </div>
+
+        <div class="box" id="signal_box">
+            <div class="label">SIGNAL</div>
+            <div class="value" id="signal"></div>
+        </div>
+
+        <div class="box" id="progress_box">
+            <div class="label">PROGRESS</div>
+            <div class="value" id="progress_send"></div>
+        </div>
+
+    </div>
+
+    <div class="input-panel">
+        <input type="text" id="input" placeholder="Entrez votre texte ici">
+        <input type="text" id="destinataire_id" placeholder="Entrez l'ID du destinataire ici">
+        <p id="your_id"></p>
+        <button id="send">Envoyer</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
